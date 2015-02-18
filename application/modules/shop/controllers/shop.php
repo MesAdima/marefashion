@@ -53,7 +53,7 @@ class Shop extends MY_Controller {
 			'qty' => '0',
 		);
 		$this->cart->update($data);
-		redirect('products/view');
+		redirect('shop/shopview');
 		//echo "remove() called";
 	}
 	
@@ -69,6 +69,7 @@ class Shop extends MY_Controller {
 			'qty' => $qty,
 		);
 		$this->cart->update($data);
+		echo "update() called";exit;
 		redirect('shopview');
 	} 
 }	
