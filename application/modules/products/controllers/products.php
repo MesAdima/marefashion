@@ -125,6 +125,11 @@ class Products extends MY_Controller {
 
         return $proddet;
 	}
+	
+	public function choosefilter($category_id = null){
+		$category_id = ($category_id == "NULL") ? null : $category_id;
+		
+	}
 
 
 

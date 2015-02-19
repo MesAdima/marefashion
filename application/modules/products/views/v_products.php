@@ -1,6 +1,4 @@
 
-
-
 <div class="criteria-bar">
     <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'products/choosefilter'?>" class="form-horizontal black" role="form">
 						<?php 
@@ -11,6 +9,7 @@
   								
   								
                                     <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="companycombo">
+                                        
                                         <?php echo $product_companies?>
                                     </select>
   									

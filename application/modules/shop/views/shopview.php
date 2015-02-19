@@ -1,4 +1,4 @@
-<?php //echo form_open(base_url().'shop/remove'.$rowid); ?>
+<?php echo form_open(base_url().'shop/update'); ?>
 
 <table cellpadding="6" cellspacing="1" style="width:100%" border="0">
 

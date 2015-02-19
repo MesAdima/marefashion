@@ -60,7 +60,7 @@ class Shop extends MY_Controller {
 	
 	public function remove($rowid){
 		$data = array(
-			'row_id' => $rowid,
+			'rowid' => $rowid,
 			'qty' => '0',
 		);
 		$this->cart->update($data);
@@ -74,9 +74,9 @@ class Shop extends MY_Controller {
 		
 	}
 	
-	public function update($row_id){
+	public function update($rowid){
 		$data = array(
-			'row_id' => $row_id,
+			'rowid' => $rowid,
 			'qty' => $qty,
 		);
 		$this->cart->update($data);
