@@ -22,6 +22,24 @@ class Home extends MY_Controller {
           
     }
 
+
+    public function update(){
+      $data['error'] = '';
+      $oid = $this->session->userdata('ac_id');
+        $results = $this->model_home->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+
+
+        $data['ownprofile'] = $odetails;
+
+        $this->load->view('header', array('logged_in' => $this->logged_in));
+        $this->load->view('update',$data);
+        $this->load->view('home_footer');
+    }
+
 	public function index()
 	{
 		$data['shirts'] = $this->getshirts();
@@ -46,7 +64,7 @@ class Home extends MY_Controller {
         
         $this->load->view('header', array('logged_in' => $this->logged_in, $data));
         $this->load->view('profile', $data);
-        $this->load->view('footer');
+        $this->load->view('home_footer');
     }
 
 	public function about()
@@ -174,6 +192,40 @@ class Home extends MY_Controller {
 
         return $accessories;
 	}
+
+   function updatemember()
+    {
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('fname', 'First Name', 'trim|min_length[2]|required|xss_clean');
+        $this->form_validation->set_rules('mname', 'Middle Name', 'trim|min_length[2]|xss_clean');
+        $this->form_validation->set_rules('lname', 'Last Name', 'trim|min_length[2]|required|xss_clean');
+        $this->form_validation->set_rules('pnumber', 'Phone Number', 'trim|min_length[9]');
+        $this->form_validation->set_rules('age', 'Age', 'trim|min_length[2]');
+        $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('religion', 'Religion', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+        
+
+        if($this->form_validation->run() == FALSE){
+           echo 'Not working';die();
+            redirect(base_url() .'home/profile');
+            
+        }else{
+
+                $result = $this->model_home->update_member();
+
+              if($result){
+                 redirect(base_url() .'home/profile');
+
+              }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+              }
+
+
+         }
+    }
 
 
 
