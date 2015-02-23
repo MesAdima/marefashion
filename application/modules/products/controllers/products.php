@@ -104,6 +104,7 @@ class Products extends MY_Controller {
         //echo '<pre>';print_r($results);echo '</pre>';die;
             $prodcomp ='<option selected="selected" value="">Select the Company</option>';
         foreach ($results as $value) {
+        	
             $prodcomp .= '<option value="' . $value['company_name'] . '">' . $value['company_name'] . '</option>';  
         }
         return $prodcomp;
