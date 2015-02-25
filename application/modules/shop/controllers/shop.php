@@ -59,12 +59,17 @@ class Shop extends MY_Controller {
 	}
 	
 	public function remove($rowid){
-		$data = array(
+		$this->cart->update(array(
 			'rowid' => $rowid,
 			'qty' => '0',
-		);
-		$this->cart->update($data);
-		redirect('shop/shopview');
+		));
+		
+		// $data = array(
+			// 'rowid' => $rowid,
+			// 'qty' => '0',
+		// );
+		//$this->cart->update($data);
+		redirect('shop');
 		//echo "remove() called";
 	}
 	

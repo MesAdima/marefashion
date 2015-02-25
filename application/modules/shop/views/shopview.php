@@ -58,5 +58,6 @@
 </tr>
 
 </table>
+<br><br>
 
-<p class="cartbutton"><a href="<?php echo base_url(). 'shop/update/'.$items['rowid']?>"><button class="btn btn-success">Update Cart</button></a></p>
+<!-- <p class="cartbutton"><a href="<?php echo base_url(). 'shop/update/'.$items['rowid']?>"><button class="btn btn-success">Update Cart</button></a></p> -->
