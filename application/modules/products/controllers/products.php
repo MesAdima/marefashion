@@ -132,9 +132,11 @@ class Products extends MY_Controller {
         $results = $this->product_model->get_product_category();
         
         //echo '<pre>';print_r($results);echo '</pre>';die;
+        
             $prodcat ='<option selected="selected" value="">Select the Category</option>';
         foreach ($results as $value) {
             $prodcat .= '<option value="' . $value['cat_name'] . '">' . $value['cat_name'] . '</option>';  
+			$prodcat  =  $value['cat_id'];
         }
         return $prodcat;
 	}
