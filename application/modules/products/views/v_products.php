@@ -9,7 +9,7 @@
   								
   								
                                     <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="companycombo">
-                                        <?php echo $value['company_id']; ?>
+                                        
                                         <?php echo $product_companies?>
                                     </select>
   									
