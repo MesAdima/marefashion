@@ -1,8 +1,8 @@
 <?php //echo $product_companies;die(); ?>
 <div class="criteria-bar">
-    <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'products/choosefilter'?>" class="form-horizontal black" role="form">
+    <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'products/view'?>" class="form-horizontal black" role="form">
 						<?php 
-                                  echo form_open_multipart(base_url().'products/choosefilter');
+                                  echo form_open_multipart(base_url().'products/view');
                               ?>
                         <fieldset>
 							<div class="control-group">
@@ -308,10 +308,7 @@
 						</ul>
 					</div> -->
 
-					<?php echo $this->table->generate($records);
-
-							echo '<div id="pagination" class="span12 pagination">' .$this->pagination->create_links(). '</div>';
-							 ?>
+					
 
 
 
